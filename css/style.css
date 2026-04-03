@@ -12,6 +12,12 @@ body {
     color: #e2e8f0;
 }
 
+/* CONTAINER CENTRAL */
+main {
+    max-width: 950px;
+    margin: auto;
+}
+
 /* HEADER */
 header {
     background: rgba(2, 6, 23, 0.9);
@@ -34,7 +40,8 @@ nav a {
     color: #94a3b8;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    position: relative;
     transition: 0.3s;
 }
 
@@ -42,73 +49,99 @@ nav a:hover {
     color: #38bdf8;
 }
 
-/* ✅ ABA ATIVA (AGORA FUNCIONA) */
-nav a.ativo {
-    color: #38bdf8;
-    border-bottom: 2px solid #38bdf8;
-    padding-bottom: 5px;
-    text-shadow: 0 0 10px rgba(56,189,248,0.6);
+/* LINHA ANIMADA (PROFISSIONAL) */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
 }
 
-/* ALERTA 🚨 */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ABA ATIVA */
+nav a.ativo {
+    color: #38bdf8;
+}
+
+/* ALERTA */
 .alerta {
-    background: linear-gradient(90deg, #dc2626, #ef4444);
+    background: #dc2626;
     color: white;
     text-align: center;
-    padding: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    animation: piscar 1s infinite;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 70px 20px;
     background: radial-gradient(circle at top, #1e293b, #020617);
 }
 
 .hero h2 {
-    font-size: 38px;
+    font-size: 36px;
     margin-bottom: 10px;
+    color: #38bdf8;
 }
 
 .hero p {
     color: #94a3b8;
+    max-width: 600px;
+    margin: auto;
 }
 
 /* IMAGEM */
 .imagem-destaque {
     display: flex;
     justify-content: center;
-    margin-top: -40px;
+    margin-top: -30px;
 }
 
 .imagem-destaque img {
-    width: 320px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(56,189,248,0.3);
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: 0.3s;
 }
 
 .imagem-destaque img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* CARDS */
 .card {
-    background: rgba(2, 6, 23, 0.8);
-    margin: 20px;
+    background: rgba(2, 6, 23, 0.85);
+    margin: 20px 10px;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 12px;
     border: 1px solid #1e293b;
-    box-shadow: 0 0 20px rgba(56,189,248,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 30px rgba(56,189,248,0.3);
+    transform: translateY(-4px);
+}
+
+/* TITULOS */
+.card h2 {
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+/* TEXTO */
+.card p {
+    line-height: 1.6;
+    color: #cbd5f5;
 }
 
 /* LISTAS */
@@ -116,12 +149,16 @@ ul {
     padding-left: 20px;
 }
 
+ul li {
+    margin-bottom: 5px;
+}
+
 /* FORM */
 input, textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid #334155;
     background: #020617;
     color: white;
@@ -129,18 +166,18 @@ input, textarea {
 
 /* BOTÃO */
 button {
-    background: linear-gradient(45deg, #38bdf8, #0ea5e9);
-    color: black;
-    padding: 12px 25px;
+    background: #38bdf8;
+    color: #020617;
+    padding: 12px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.05);
+    background: #0ea5e9;
 }
 
 /* TABELA */
@@ -163,7 +200,7 @@ th, td {
 /* MAPA */
 iframe {
     margin-top: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    border-radius: 10px;
 }
 
 /* FOOTER */
@@ -173,22 +210,17 @@ footer {
     background: #020617;
     margin-top: 30px;
     border-top: 1px solid #1e293b;
+    font-size: 14px;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO SUAVE */
 section {
-    animation: fadeIn 0.8s ease-in;
+    animation: fadeIn 0.6s ease-in;
 }
 
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
+    from {opacity: 0; transform: translateY(15px);}
     to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes piscar {
-    0% {opacity: 1;}
-    50% {opacity: 0.6;}
-    100% {opacity: 1;}
 }
 
 /* RESPONSIVO */
@@ -197,10 +229,11 @@ section {
     nav {
         display: flex;
         flex-direction: column;
+        gap: 8px;
     }
 
     .hero h2 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .imagem-destaque img {
