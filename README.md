@@ -89,4 +89,4 @@ O site foi desenvolvido com foco em clínicas especializadas em gatos, destacand
 
 ## 👩‍💻 Autora
 
-Desenvolvido por Larissa Soeiro 🐾
+Desenvolvido por Larissa Soeiro amante e protetora de gatos 🐾
