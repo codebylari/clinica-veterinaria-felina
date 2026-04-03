@@ -49,7 +49,7 @@ nav a:hover {
     color: #38bdf8;
 }
 
-/* LINHA ANIMADA (PROFISSIONAL) */
+/* LINHA ANIMADA */
 nav a::after {
     content: "";
     position: absolute;
@@ -213,7 +213,7 @@ footer {
     font-size: 14px;
 }
 
-/* ANIMAÇÃO SUAVE */
+/* ANIMAÇÃO */
 section {
     animation: fadeIn 0.6s ease-in;
 }
@@ -221,6 +221,31 @@ section {
 @keyframes fadeIn {
     from {opacity: 0; transform: translateY(15px);}
     to {opacity: 1; transform: translateY(0);}
+}
+
+/* BOTÃO WHATSAPP COM ÍCONE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1ebe5d;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.whatsapp img {
+    width: 28px;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+    background: #1ebe5d;
 }
 
 /* RESPONSIVO */
