@@ -30,8 +30,13 @@
     </p>
 </section>
 
+<!-- 🔥 CARROSSEL (SUBSTITUI A IMAGEM) -->
 <section class="imagem-destaque">
-    <img src="img/gato.jpg" alt="Gato fofo sendo cuidado">
+    <div class="carrossel">
+        <img src="img/gato.jpg" class="ativo" alt="Gato 1">
+        <img src="img/gato2.jpg" alt="Gato 2">
+        <img src="img/gato3.jpg" alt="Gato 3">
+    </div>
 </section>
 
 <section class="card">
@@ -78,13 +83,29 @@
 </section>
 
 </main>
+
 <!-- 🔥 BOTÃO WHATSAPP -->
 <a href="https://wa.me/5500000000000" class="whatsapp" target="_blank">
     <img src="img/whatsapp.png" alt="WhatsApp">
 </a>
+
 <footer>
     <p>© 2026 VidaPet Felina | Atendimento 24h 🐾</p>
 </footer>
+
+<!-- ⚙️ SCRIPT DO CARROSSEL -->
+<script>
+    const imagens = document.querySelectorAll('.carrossel img');
+    let index = 0;
+
+    function trocarImagem() {
+        imagens[index].classList.remove('ativo');
+        index = (index + 1) % imagens.length;
+        imagens[index].classList.add('ativo');
+    }
+
+    setInterval(trocarImagem, 3000);
+</script>
 
 </body>
 </html>
